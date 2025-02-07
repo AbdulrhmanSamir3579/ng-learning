@@ -1,0 +1,61 @@
+<nav class="bg-gray-900 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold">MyApp</a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/" class="hover:text-gray-300">Home</a>
+        <a routerLink="/about" class="hover:text-gray-300">About</a>
+        <a routerLink="/contact" class="hover:text-gray-300">Contact</a>
+
+        <!-- Dropdown -->
+        <div class="relative group">
+          <button class="focus:outline-none">Services ▾</button>
+          <div
+            class="absolute hidden group-hover:block bg-gray-800 rounded-md shadow-lg mt-2 py-2 w-40"
+            >
+            <a
+              routerLink="/service1"
+              class="block px-4 py-2 hover:bg-gray-700"
+              >Service 1</a
+              >
+              <a
+                routerLink="/service2"
+                class="block px-4 py-2 hover:bg-gray-700"
+                >Service 2</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Language Switcher & Mobile Menu -->
+          <div class="flex items-center space-x-4">
+            <!-- Language Switcher -->
+            <button (click)="switchLanguage('en')" [class.text-yellow-400]="language === 'en'">
+              EN
+            </button>
+            <button (click)="switchLanguage('ar')" [class.text-yellow-400]="language === 'ar'">
+              AR
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none" (click)="toggleMenu()">
+              ☰
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      @if (isMenuOpen) {
+        <div class="md:hidden bg-gray-800">
+          <a routerLink="/" class="block px-4 py-2">Home</a>
+          <a routerLink="/about" class="block px-4 py-2">About</a>
+          <a routerLink="/contact" class="block px-4 py-2">Contact</a>
+        </div>
+      }
+    </nav>

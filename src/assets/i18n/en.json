@@ -1,0 +1,12 @@
+{
+  "CATEGORY": {
+    "MEN": "Men",
+    "CLOTHING": "Clothing"
+  },
+  "PRODUCT": {
+    "BASIC_TEE": "Basic Tee 6-Pack",
+    "INFO": "Product information",
+    "REVIEWS": "Reviews",
+    "RATING": "4 out of 5 stars"
+  }
+}

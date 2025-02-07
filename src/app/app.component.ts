@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {NavComponent} from './shared/components/nav/nav.component';
+import {LanguageService} from './core/services/language.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'AngularTS';
-  isOpen = false;
+export class AppComponent implements OnInit {
 
-  openModal() {
-    this.isOpen = true;
+  constructor(private languageService: LanguageService) {
   }
 
-  closeModal() {
-    this.isOpen = false;
+  title = 'AngularTS';
+
+  ngOnInit(): void {
+    this.setAppDefaultLang();
+  }
+
+
+  private setAppDefaultLang() {
+    this.languageService.setInitialAppLanguage()
   }
 }
