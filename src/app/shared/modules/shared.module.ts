@@ -1,11 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
+import {RouterModule} from '@angular/router';
 
 const components: any[] = []
 const modules: any[] = [
   CommonModule,
-  TranslateModule
+  TranslateModule,
+  RouterModule,
 ]
 
 @NgModule({

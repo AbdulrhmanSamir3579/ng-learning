@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {LanguageService} from '../../../core/services/language.service';
+import {SharedModule} from '../../modules/shared.module';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [SharedModule],
   templateUrl: './nav.component.html'
 })
 export class NavComponent {
